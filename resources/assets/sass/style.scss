@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Justtellmewhat;
+    src: url("../fonts/Justtellmewhat.eot") format("eot"),
+		 url("../fonts/Justtellmewhat.woff2") format("woff2"),
+		 url("../fonts/Justtellmewhat.woff") format("woff"),
+		 url("../fonts/Justtellmewhat.ttf") format("truetype"),
+		 url("../fonts/Justtellmewhat.svg") format("svg");
+	font-weight: 900;
+}
+body{
+	background-image: url('../img/background.png');
+	font-family: Justtellmewhat;
+	color: white;
+	font-size: 16px;
+	font-style: italic;
+	background-size: cover;
+}
+
+#logo {
+	display: block;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+.center-block{
+	float: none;
+}
+#cart {
+	float: right;
+	position: relative;
+	bottom: 12em;
+	right: 6.1em;
+}
+.navbar, .navbar-default{
+	background-color: transparent;
+	border-width: 0px;
+}
+
+.item-text{
+	font-size: 36px;
+	color: white;
+}
+.nav-item{
+	padding: 0 2.185em;
+}
+.navbar-collapse{
+	margin: 35px 0 0 2.1875em;
+}
+
+@import 'small-devices';

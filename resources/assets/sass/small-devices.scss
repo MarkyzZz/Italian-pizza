@@ -1,0 +1,33 @@
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+	#cart {
+		float: none;
+	    position: static;
+	    margin: 0 auto;
+	    display: block;
+	    margin-top: 20px;
+        width: 61px;
+	}
+	.item-text{
+		font-size: 16px;
+	}
+	.nav-item {
+    	padding: 0;
+	}
+	.navbar-collapse {
+        margin: 0;
+    }
+}
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+    .navbar-brand{
+    	display:none;
+    }
+    .navbar .navbar-collapse {
+        text-align: center;
+        margin: 35px 0 0 2.185em;
+    }
+}

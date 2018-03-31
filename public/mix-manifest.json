@@ -1,4 +1,6 @@
 {
+    "/js/lib.js": "/js/lib.js",
+    "/css/style.css": "/css/style.css",
     "/js/vendor.min.js": "/js/vendor.min.js",
     "/css/vendor.min.css": "/css/vendor.min.css"
 }
