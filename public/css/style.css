@@ -48,6 +48,130 @@ body {
   margin: 35px 0 0 2.1875em;
 }
 
+.border {
+  border-style: solid;
+  border-width: 63px 61px 57px 65px;
+  -o-border-image: url("../img/wood-frame.png") 63 61 57 65 round;
+  border-image: url("../img/wood-frame.png") 63 61 57 65 round;
+  height: 690px;
+  width: 888px;
+}
+
+.owl-prev i, .owl-next i {
+  -webkit-transform: scale(7, 7);
+          transform: scale(7, 7);
+}
+
+.owl-prev, .owl-next {
+  position: absolute;
+}
+
+.owl-prev {
+  top: 50%;
+  left: 5%;
+}
+
+.owl-prev:focus, .owl-next:focus {
+  outline: 0;
+}
+
+.owl-next {
+  top: 50%;
+  right: 5%;
+}
+
+.image-description {
+  font-size: 76px;
+  position: absolute;
+  text-align: center;
+  top: 27%;
+  left: 30%;
+}
+
+.yellow-text {
+  color: #FFC401;
+}
+
+.ingridients-container {
+  margin: auto auto;
+  height: 0;
+}
+
+#coriander {
+  position: relative;
+  top: -40em;
+  left: -4.5em;
+  -webkit-filter: drop-shadow(10px 10px 2px #222);
+  filter: drop-shadow(10px 10px 2px #222);
+  z-index: 2;
+}
+
+#tomato {
+  position: relative;
+  bottom: 15em;
+  left: 45em;
+  -webkit-filter: drop-shadow(-5px 5px 2px #222);
+  filter: drop-shadow(-5px 5px 2px #222);
+  z-index: 2;
+}
+
+#slide-3 {
+  top: 32%;
+  left: 45%;
+}
+
+.divider {
+  margin: 40px auto 0px auto;
+}
+
+.row > h1 {
+  font-size: 76px;
+  text-align: center;
+  margin-top: -15px;
+  margin-bottom: 5px;
+}
+
+.row > p {
+  text-align: center;
+  font-size: 24px;
+}
+
+.btn-default, .btn-default:focus {
+  background-color: transparent;
+  border-color: #FFC401;
+  border-width: 6px;
+  border-radius: 0;
+  color: #FFC401;
+  font-size: 36px;
+  outline: 0;
+  padding: 0px 7.5px;
+  margin-top: 30px;
+}
+
+.btn-default:hover, .btn-default:active:focus {
+  border-color: white;
+  background-color: transparent;
+  color: white;
+}
+
+#parmesan {
+  position: relative;
+  top: -23em;
+  left: -3.5em;
+  -webkit-filter: drop-shadow(10px 10px 2px #222);
+  filter: drop-shadow(10px 10px 2px #222);
+  z-index: 2;
+}
+
+#pepper {
+  position: relative;
+  bottom: 14em;
+  left: 42.5em;
+  -webkit-filter: drop-shadow(-5px 5px 2px #222);
+  filter: drop-shadow(-5px 5px 2px #222);
+  z-index: 2;
+}
+
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
   #cart {
     float: none;

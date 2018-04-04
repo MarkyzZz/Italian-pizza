@@ -26,6 +26,7 @@ mix.sass('resources/assets/sass/style.scss','public/css')
 	.styles([
 		'node_modules/bootstrap/dist/css/bootstrap.min.css',
 		'node_modules/owl.carousel/dist/assets/owl.carousel.min.css',
+		'public/css/font-awesome.min.css',
 		'public/css/style.css'
 	],
 	'public/css/vendor.min.css',);
