@@ -11,6 +11,9 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('master');
+// });
 Route::get('/', function () {
-    return view('master');
+    return view('homepage');
 });

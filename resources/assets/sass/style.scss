@@ -20,7 +20,20 @@ body {
 	font-style: italic;
 	background-size: cover;
 }
-
+.big{
+	font-size: $fontSize;
+}
+.small{
+	font-size: $smallFontSize;
+}
+.medium {
+	font-size: $mediumFontSize;
+}
+#profile{
+	position: relative;
+    left: 92%;
+    bottom: 12em;
+}
 #logo {
 	display: block;
 	margin: 0 auto;
@@ -39,7 +52,6 @@ body {
 	background-color: transparent;
 	border-width: 0px;
 }
-
 .item-text {
 	font-size: 36px;
 	color: white;
@@ -77,7 +89,6 @@ body {
 	top: 50%;
 	right: 5%;
 }
-
 .image-description {
 	font-size: 76px;
 	position: absolute;
@@ -95,7 +106,7 @@ body {
 #coriander {
 	position:relative;
 	top: -40em;
-	left: -4.5em;
+	left: -2.5em;
 	-webkit-filter: drop-shadow(10px 10px 2px #222);
     filter: drop-shadow(10px 10px 2px #222);
 	z-index: 2;	
@@ -125,7 +136,6 @@ body {
 	text-align: center;
 	font-size: $smallFontSize;
 }
-
 .btn-default, .btn-default:focus {
 	background-color: transparent;
 	border-color: $yellow-color;
@@ -134,7 +144,10 @@ body {
 	color: $yellow-color;
 	font-size: $mediumFontSize;
 	outline: 0;
-	padding: 0px 7.5px;
+	padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0;
+    padding-bottom: 0;
 	margin-top: 30px;
 }
  .btn-default:hover,.btn-default:active:focus {
@@ -157,5 +170,91 @@ body {
 	-webkit-filter: drop-shadow(-5px 5px 2px #222);
     filter: drop-shadow(-5px 5px 2px #222);
 	z-index: 2;
+}
+#fork {
+	position: relative;
+    right: 5%;
+    margin-bottom: 127px;
+    margin-right: 45px;
+}
+#garlic {
+	position: relative;
+    left: 58.1%;
+    top: 17em;
+}
+.chalk-text {
+	text-align: center;
+	font-size: $smallFontSize;
+    width: 35%;
+}
+div > .chalk-text:nth-of-type(1){
+    transform: translate(33em,-5em);
+}
+div > .chalk-text:nth-of-type(2){
+    transform: translate(0.7em,3.4em);
+    width: 30%;
+}
+#flour {
+    position: relative;
+    right: 5%;
+    top: 1em;
+}
+.form-group > input,.form-group > input:active,
+.form-group > input:focus, 
+.form-group > textarea,
+.form-group > textarea:focus {
+    background-color: transparent;
+    border-radius: 0;
+    border-width: 2px;
+    border-color: white;
+    color: white;
+    outline: 0;
+    appearance: none;
+}
+.email{
+	position: relative;
+	left: 15px;
+}
+#message {
+	max-width: 568px;
+    width: 556px;
+    max-height: 250px;
+    height: 126px;
+}
+.form-group > label,form > div:nth-child(1) > div:nth-child(5) > label{
+	text-align: left;
+}
+.form-group {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.border-wrapper{
+	position: absolute;
+	transform: translate(40em,-2em);
+	border-style: solid;
+	border-width: 42px 40px 40px 43px;
+	-moz-border-image: url('../i40mg/wood-frame.png') 42 40 40 43 round;
+	-webkit-border-image: url('../img/wood-frame.png') 42 40 40 43 round;
+	-o-border-image: url('../img/wood-frame.png') 42 40 40 43 round;
+	border-image: url('../img/wood-frame.png') 42 40 40 43 round;
+}
+iframe{
+	filter: grayscale(100%);
+}
+footer{
+	background-image: url('../img/background.png');
+	height:262px;
+	filter: invert(100%);
+	margin-top: 90px;
+}
+footer > img {
+	filter: inherit;
+	padding-top: 40px; 
+}
+footer > p {
+	text-align: center;
+	padding-top: 20px;
+    font-size: 16px;
+    font-weight: 100;
 }
 @import 'small-devices';
