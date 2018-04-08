@@ -352,3 +352,48 @@ footer > p {
     margin: 35px 0 0 2.185em;
   }
 }
+
+.thumbnail {
+  background-color: transparent;
+  border: 0;
+}
+
+.caption > p {
+  text-align: center;
+  font-size: 56px;
+}
+
+div > p.price {
+  font-size: 30px;
+  text-align: left;
+  color: white;
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+}
+
+.icon-medium {
+  font-size: 50px;
+}
+
+.amount {
+  font-size: 50px;
+  padding-left: 6px;
+  padding-right: 12px;
+}
+
+span {
+  color: white;
+}
+
+.control {
+  -webkit-transform: translate(10%, 0);
+          transform: translate(10%, 0);
+}
+
+.add-to-cart, button.add-to-cart:focus {
+  margin-top: 0;
+  font-size: 28px;
+  border-width: 3px;
+}

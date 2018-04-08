@@ -14,6 +14,7 @@ mix.options({processCssUrls: false});
  */
 
 mix.sass('resources/assets/sass/style.scss','public/css')
+	.sass('resources/assets/sass/menu.scss','public/css')
 	.js('resources/assets/js/lib.js','public/js')
 	.scripts([
 		'node_modules/jquery/dist/jquery.min.js',
@@ -27,6 +28,7 @@ mix.sass('resources/assets/sass/style.scss','public/css')
 		'node_modules/bootstrap/dist/css/bootstrap.min.css',
 		'node_modules/owl.carousel/dist/assets/owl.carousel.min.css',
 		'public/css/font-awesome.min.css',
-		'public/css/style.css'
+		'public/css/style.css',
+		'public/css/menu.css',
 	],
 	'public/css/vendor.min.css',);

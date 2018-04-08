@@ -17,3 +17,7 @@
 Route::get('/', function () {
     return view('homepage');
 });
+Route::get('/menu', function () {
+    return view('menu');
+});
+
