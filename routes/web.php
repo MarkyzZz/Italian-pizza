@@ -20,4 +20,14 @@ Route::get('/', function () {
 Route::get('/menu', function () {
     return view('menu');
 });
+Route::get('/order', function () {
+    return view('order');
+});
+Route::get('/admin', function () {
+    return view('templates/admin_');
+});
+Route::get('/order/step2', function(){
+	return view('delivery_form');
+});
+
 

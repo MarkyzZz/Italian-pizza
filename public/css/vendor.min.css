@@ -27,7 +27,7 @@ body {
   color: white;
   font-size: 16px;
   font-style: italic;
-  background-size: cover;
+  background-size: contain;
 }
 
 .big {
@@ -160,10 +160,12 @@ body {
 }
 
 .row > h1 {
-  font-size: 76px;
-  text-align: center;
   margin-top: -15px;
   margin-bottom: 5px;
+}
+
+.text-centered {
+  text-align: center;
 }
 
 .row > p {
@@ -303,6 +305,7 @@ footer {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   margin-top: 90px;
+  background-size: inherit;
 }
 
 footer > img {
@@ -316,6 +319,60 @@ footer > p {
   padding-top: 20px;
   font-size: 16px;
   font-weight: 100;
+}
+
+input:focus {
+  color: white;
+  opacity: 1;
+}
+
+.form-inline {
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.form-inline > div {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.form-inline > div > input {
+  width: 100% !important;
+}
+
+.navbar {
+  text-align: center;
+  color: white;
+}
+
+div > nav > ul > li > a:focus,
+div > nav > ul > li > a,
+div > nav > ul > li > a:visited,
+div > nav > ul > li > a:hover {
+  color: white;
+  background-color: transparent !important;
+}
+
+nav:nth-child(6) > ul > li {
+  padding: 0 20px;
+}
+
+.orders {
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.orders div, .orders img, .orders h1, .orders h2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header {
+  width: 79%;
+}
+
+.prices {
+  width: 100%;
 }
 
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {

@@ -1,7 +1,7 @@
 <div class="row">
   <img class="center-block divider" src="{{asset('/img/divider.png')}}">
-  <h1>Contacts</h1>
-  <form class="form-horizontal">
+  <h1 id="contacts" class="text-centered big">Contacts</h1>
+  <form class="form-horizontal" autocomplete="off">
     <div class="row">
       <h2 class="medium">Contact details:</h2>
       <div class="border-wrapper">

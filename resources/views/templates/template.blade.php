@@ -54,8 +54,8 @@
     <div class="container relative">
     @section('logo')
         <img id='logo' alt="logo" class="center-block col-xs-6 col-sm-4 col-md-3 img-responsive" src="{{ asset('/img/logo.png') }}">
-        <img id='cart' class="img-responsive" alt="cart" src="{{ asset('/img/cart.png') }}">
-        <img id='profile' class="img-responsive" alt="cart" src="{{ asset('/img/profile.png') }}">
+        <a href="{{url('/order')}}"><img id='cart' class="img-responsive" alt="cart" src="{{ asset('/img/cart.png') }}"></a>
+        <a href="{{url('/admin')}}"><img id='profile' class="img-responsive" alt="cart" src="{{ asset('/img/profile.png') }}"></a>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -68,10 +68,10 @@
             </div>
             <div class="collapse navbar-collapse" id="nav_collapsed">
               <ul class="nav navbar-nav">
-                <li class="nav-item"><a href="#"><p class="item-text">Home</p></a></li>
-                <li class="nav-item"><a href="#"><p class="item-text">Menu</p></a></li>
+                <li class="nav-item"><a href="{{url('/')}}"><p class="item-text">Home</p></a></li>
+                <li class="nav-item"><a href="{{url('/menu')}}"><p class="item-text">Menu</p></a></li>
                 <li class="nav-item"><a href="#"><p class="item-text">About us</p></a></li>
-                <li class="nav-item"><a href="#"><p class="item-text">Contacts</p></a></li>
+                <li class="nav-item"><a href="/#contacts"><p class="item-text">Contacts</p></a></li>
             </ul>
         </div>
     </div>

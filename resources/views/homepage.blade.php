@@ -7,7 +7,7 @@
 </div>
 <div class="row">
 	<img class="center-block divider" src="{{asset('/img/divider.png')}}">
-	<h1>Welcome</h1>
+	<h1 class="text-centered big">Welcome</h1>
 	<p class="col-xs-8 col-md-8 center-block">
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illo earum incidunt veniam, qui voluptates ut neque dolore molestiae laudantium alias ad sit modi itaque animi porro cumque fugit quo.Debitis laudantium obcaecati atque, repellat quam aspernatur impedit facere fugit eum cumque voluptate praesentium quo illum perspiciatis dignissimos deleniti doloremque fuga dolorum delectus, beatae iure nisi magnam ipsam, numquam. Est!
 	</p>
@@ -19,7 +19,7 @@
 </div>
 <div class="row">
 	<img class="center-block divider" src="{{asset('/img/divider.png')}}">
-	<h1>Our pizza</h1>
+	<h1 class="text-centered big">Our pizza</h1>
 </div>
 <div class="ingridients-container">
 	<img id='fork' src="{{asset('/img/for2k.png')}}">
