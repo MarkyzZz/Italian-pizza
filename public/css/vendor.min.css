@@ -30,6 +30,14 @@ body {
   background-size: contain;
 }
 
+a:hover, a:visited, a:focus {
+  text-decoration: none;
+}
+
+span.yellow-text:hover {
+  color: white;
+}
+
 .big {
   font-size: 76px;
 }

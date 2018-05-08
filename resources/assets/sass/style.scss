@@ -16,6 +16,12 @@ body {
 	font-style: italic;
 	background-size: contain;
 }
+a:hover, a:visited, a:focus{
+	text-decoration: none;
+}
+span.yellow-text:hover {
+	color: white;
+}
 .big{
 	font-size: $fontSize;
 }
@@ -95,6 +101,7 @@ body {
 .yellow-text {
 	color: $yellow-color;
 }
+
 .ingridients-container {
 	margin: auto auto;
 	height: 0;

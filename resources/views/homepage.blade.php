@@ -11,7 +11,7 @@
 	<p class="col-xs-8 col-md-8 center-block">
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illo earum incidunt veniam, qui voluptates ut neque dolore molestiae laudantium alias ad sit modi itaque animi porro cumque fugit quo.Debitis laudantium obcaecati atque, repellat quam aspernatur impedit facere fugit eum cumque voluptate praesentium quo illum perspiciatis dignissimos deleniti doloremque fuga dolorum delectus, beatae iure nisi magnam ipsam, numquam. Est!
 	</p>
-	<button type="button" class="col-md-3 col-xs-3 center-block btn btn-default">more about us</button>
+	<a href="{{url('/about_us')}}" id="more_about" class="col-md-3 col-xs-3 center-block btn btn-default">more about us</a>
 </div>
 <div class="ingridients-container">
 	<img id='parmesan' src="{{asset('/img/parmesan.png')}}">
@@ -30,7 +30,6 @@
 </div>
 <div class="row">
 	<img class="center-block divider" src="{{asset('/img/pizza-text.png')}}">
-	<button type="button" class="center-block btn btn-default">menu</button>
+	<a href="{{url('/menu')}}" id="menu" class="col-md-2 col-xs-2 center-block btn btn-default">menu</a>
 </div>
-@include('partials.contact_form')
 @endsection
