@@ -30,4 +30,13 @@ Route::get('/order/step2', function(){
 	return view('delivery_form');
 });
 
+Route::get('/about_us',function(){
+	return view('about_us');
+});
+
+Route::get('/contacts', function(){
+	return view('contacts');
+});
+
+Route::post('/contacts', 'ContactsController@store');
 
