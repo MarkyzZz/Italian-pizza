@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Authentic Italian Pizza" />
     <meta name="author" content="Marin Cunup" />
+    <meta name="_token" content="{{csrf_token()}}" />
     <link rel="shortcut icon" href={{ asset("favicon.png") }} />
     <title>Italian Pizza</title>
     <link href="{{ asset('/css/vendor.min.css') }}" rel="stylesheet">

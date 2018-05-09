@@ -305,4 +305,10 @@ nav:nth-child(6) > ul > li {
 .prices {
 	width:100%;
 }
+.error {
+	box-shadow: 0px 1px 11px 4px $yellow-color;
+}
+.success{
+	color: lightgreen;
+}
 @import 'small-devices';
