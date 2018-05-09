@@ -383,6 +383,15 @@ nav:nth-child(6) > ul > li {
   width: 100%;
 }
 
+.error {
+  -webkit-box-shadow: 0px 1px 11px 4px #FFC401;
+          box-shadow: 0px 1px 11px 4px #FFC401;
+}
+
+.success {
+  color: lightgreen;
+}
+
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
   #cart {
     float: none;

@@ -1,4 +1,6 @@
 @extends('templates.template')
-@section('content')
+	@section('content')
 	@include('partials.contact_form')
 @endsection
+
+

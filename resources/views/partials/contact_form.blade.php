@@ -1,8 +1,7 @@
 <div class="row">
   <img class="center-block divider" src="{{asset('/img/divider.png')}}">
   <h1 id="contacts" class="text-centered big">Contacts</h1>
-  <form class="form-horizontal" autocomplete="off" method="POST" action="{{url('/contacts')}}">
-    {{csrf_field()}}
+  <form class="form-horizontal" method="POST" action="/contacts">
     <div class="row">
       <h2 class="medium">Contact details:</h2>
       <div class="border-wrapper">
@@ -45,7 +44,42 @@
       </div>
     </div>
     <div class="row">
-      <button type="submit" class="btn btn-default">submit</button>
+      <button id="submit" type="submit" class="btn btn-default">submit</button>
     </div>
   </form>
 </div>
+<script type="text/javascript">
+         jQuery(document).ready(function(){
+          $('#name,#email,#message').on('focus',function(){
+            $(this).removeClass('error').next().remove();
+          });
+            jQuery('#submit').click(function(e){
+              $('#name,#email,#message,#submit').next().remove();
+               e.preventDefault();
+               jQuery.ajaxSetup({
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                  }
+              });
+               jQuery.ajax({
+                  url: "{{ url('/contacts') }}",
+                  method: 'post',
+                  data: {
+                     name: $('#name').val(),
+                     email: $('#email').val(),
+                     message: $('#message').val()
+                  },
+                  success: function(data){
+                        jQuery.each(data.errors, function(key, value){
+                            $('#' + key).addClass('error').after("<p>" + value + "</p>");
+                        });
+                        if('success' in data && data.success.length > 0) {
+                          $('#name,#email,#message').val('');
+                          $('#submit').after("<p class='yellow-text fadeOut'>" + data.success + "</p>");
+                          $('.fadeOut').delay(5000).fadeOut(1600, "linear");
+                        }
+                    } 
+                  });
+               });
+            });
+</script>
