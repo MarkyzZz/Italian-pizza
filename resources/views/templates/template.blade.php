@@ -36,10 +36,9 @@
                 }
             },
             margin: 300,
-            autoplay: false,
+            autoplay: true,
             autoplayHoverPause: true,
-            autoplaySpeed: 3000,
-            autoplayTimeout: 7000,
+            autoplaySpeed: 1000,
             dots: false,
             nav: true,
             dotsContainer: '#carousel-custom-dots',
@@ -55,7 +54,7 @@
     <div class="container relative">
     @section('logo')
         <img id='logo' alt="logo" class="center-block col-xs-6 col-sm-4 col-md-3 img-responsive" src="{{ asset('/img/logo.png') }}">
-        <a href="{{ url('/order') }}"><img id='cart' class="img-responsive" alt="cart" src="{{ asset('/img/cart.png') }}"></a>
+        <a href="{{ url('/cart') }}"><img id='cart' class="img-responsive" alt="cart" src="{{ asset('/img/cart.png') }}"></a>
         <a href="{{ url('/admin') }}"><img id='profile' class="img-responsive" alt="cart" src="{{ asset('/img/profile.png') }}"></a>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
