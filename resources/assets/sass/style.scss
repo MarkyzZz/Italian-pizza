@@ -311,4 +311,12 @@ nav:nth-child(6) > ul > li {
 .success{
 	color: lightgreen;
 }
+.fa-minus-square-o:hover, .fa-plus-square-o:hover {
+	color:white;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 @import 'small-devices';
