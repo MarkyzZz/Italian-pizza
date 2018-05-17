@@ -46,9 +46,7 @@
 <script>
   $(document).ready(function(){
     jQuery('#submit').click(function(e){
-              $('input').on('focus',function(){
-                $(this).removeClass('error').next().remove();
-              });
+               $('input').removeClass('error').next('p').remove();
                e.preventDefault();
                jQuery.ajaxSetup({
                   headers: {
@@ -56,7 +54,7 @@
                   }
                 });
                 jQuery.ajax({
-                          url: "{{ url('/cart/user/store') }}",
+                          url: "{{ url('user/store') }}",
                           method: 'post',
                           data: {
                             email: $('#email').val(),
@@ -70,8 +68,7 @@
                                 jQuery.each(data.errors, function(key, value){
                                     $('#' + key).addClass('error').after("<p>" + value + "</p>");
                                 });
-
-                            if('success' in data) location.reload();
+                            if('success' in data) window.location = '/order/create';
                             } 
                 });
               });

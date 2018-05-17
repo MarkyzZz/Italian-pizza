@@ -15,4 +15,9 @@ class PageController extends Controller
     {
     	return view('about_us');
     }
+
+    public function admin()
+    {
+    	return view('templates.admin_');
+    }
 }

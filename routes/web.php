@@ -6,6 +6,7 @@
 
 Route::get('/', 'PageController@index');
 Route::get('/about_us','PageController@about');
+Route::get('/admin','PageController@admin');
 
 Route::get('/menu','MenuController@index');
 
@@ -15,8 +16,11 @@ Route::get('/cart/delete/{product}','CartController@delete');
 Route::post('/cart/update','CartController@update');
 Route::post('/cart/{product}', 'CartController@add');
 
-Route::get('/cart/user/create','UsersController@create');
-Route::post('/cart/user/store','UsersController@store');
+Route::get('user/create','UsersController@create');
+Route::post('user/store','UsersController@store');
+
+Route::get('order/create','OrderController@create');
+Route::post('order/store','OrderController@store');
 
 Route::get('/contacts', 'ContactsController@create');
 Route::post('/contacts', 'ContactsController@store');

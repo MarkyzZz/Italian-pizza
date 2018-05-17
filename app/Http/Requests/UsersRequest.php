@@ -30,7 +30,10 @@ class UsersRequest extends FormRequest
             'phone' => 'required|digits_between:9,11',
             'city' => 'required',
             'street' => 'required',
-            'block' => 'required'
+            'block' => 'required',
+            'apartment' => '',
+            'doorcode' => '',
+            'info' => ''
         ];
     }
 

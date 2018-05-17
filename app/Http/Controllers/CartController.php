@@ -9,11 +9,19 @@ use App\Product;
 
 class CartController extends Controller
 {
+    /**
+     * Shows everything inside the cart
+     * @return  cart view
+     */ 
 	public function index()
 	{	
 		return view('cart');
 	}
 
+    /**
+     * Adds new product in cart
+     * @param Product $product
+     */
     public function add(Product $product)	
     {
     	Cart::add([
@@ -29,7 +37,11 @@ class CartController extends Controller
     	$cart = Cart::content();
     	return redirect()->back();
     }
-
+    /**
+     * Updates current cart with new values
+     * @param  Request $request 
+     * @return            
+     */
     public function update(Request $request)
     {   
         foreach ($request->all()['amount'] as $key => $value) {
@@ -38,9 +50,13 @@ class CartController extends Controller
              });
             Cart::update($cartItem->first()->rowId, $value);
         }
-        return redirect()->to('/cart/user/create');
+        return redirect()->to('user/create');
     }
-
+    /**
+     * Deletes the product from the cart
+     * @param  Product $product 
+     * @return
+     */
     public function delete(Product $product)
     {
         $cartItem = Cart::search(function ($cartItem) use ($product){
@@ -51,6 +67,10 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * Destroys the current cart instance, removing all items from it
+     * @return 
+     */
     public function destroy()
     {
     	if(Cart::count() > 0) Cart::destroy();
