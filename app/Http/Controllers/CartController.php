@@ -24,7 +24,7 @@ class CartController extends Controller
      */
     public function add(Product $product)	
     {
-    	Cart::add([
+    	$cartItem = Cart::add([
     		'id' => $product->id,
     		'name' => $product->name,
     		'options' => 

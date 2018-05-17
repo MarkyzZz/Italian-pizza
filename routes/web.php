@@ -4,7 +4,7 @@
 //     return view('templates/admin_');
 // });
 
-Route::get('/', 'PageController@index');
+Route::get('/', 'PageController@index')->name('home');
 Route::get('/about_us','PageController@about');
 Route::get('/admin','PageController@admin');
 

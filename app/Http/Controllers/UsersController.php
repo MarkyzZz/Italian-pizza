@@ -22,7 +22,9 @@ class UsersController extends Controller
             return response()->json(['errors' => $request->validator->messages()]);
         }
         Session::put('input',$request->all());
-        return response()->json(['success' => "Your user has been created!"]);
+        return response()->json(['success' => "Your user has been created!",
+                                'request' => Input::all()
+    ]);
 
     }
 }

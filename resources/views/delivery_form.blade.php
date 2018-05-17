@@ -62,7 +62,10 @@
                             phone: $('#phone').val(),
                             city: $('#city').val(),
                             street: $('#street').val(),
-                            block: $('#block').val()
+                            block: $('#block').val(),
+                            apartment: $('#apartment').val(),
+                            doorcode: $('#doorcode').val(),
+                            info: $('#info').val()
                           },
                           success: function(data){
                                 jQuery.each(data.errors, function(key, value){

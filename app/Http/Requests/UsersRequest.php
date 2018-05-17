@@ -31,9 +31,9 @@ class UsersRequest extends FormRequest
             'city' => 'required',
             'street' => 'required',
             'block' => 'required',
-            'apartment' => '',
-            'doorcode' => '',
-            'info' => ''
+            // 'apartment' => '',
+            // 'doorcode' => '',
+            // 'info' => ''
         ];
     }
 
