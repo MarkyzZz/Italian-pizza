@@ -42,8 +42,8 @@ class OrderController extends Controller
         Cart::content()->each(function($cartItem) use ($user, $transaction){
             $order = new Order();
             $order->user_id = $user->id;
-            $user->orders()->save($order);
-            $transaction->orders()->save($order);
+            $order->transaction_id = $transaction->id;
+            $order->save();
             $order->products()->attach($cartItem->id, ['quantity' => $cartItem->qty]);
         }); 
 
