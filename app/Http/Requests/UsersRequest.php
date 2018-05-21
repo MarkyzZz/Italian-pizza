@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Support\Facades\Input;
 
 class UsersRequest extends FormRequest
 {
@@ -31,14 +32,22 @@ class UsersRequest extends FormRequest
             'city' => 'required',
             'street' => 'required',
             'block' => 'required',
-            // 'apartment' => '',
-            // 'doorcode' => '',
-            // 'info' => ''
+            'payment_type' => 'required',
+            'card_no' => $this->requiredIfEpayment()? 'required|digits:16' : '',
+            'ccExpiryMonth' => $this->requiredIfEpayment()? 'required|digits:2|between:01,12' : '',
+            'ccExpiryYear' => $this->requiredIfEpayment()? 'required|digits:2' : '',
+            'cardCVV' => $this->requiredIfEpayment()? 'required|digits:3' : '',
+            'card_owner' => $this->requiredIfEpayment()? ['required','regex:/(^[\w]*[\s]{1}[\w]{1,}$)/'] : ''
         ];
     }
 
     protected function failedValidation(Validator $validator)
     {
         $this->validator = $validator;
+    }
+
+    private function requiredIfEpayment()
+    {
+        return Input::has('payment_type') && Input::get('payment_type') == 'epayment';
     }
 }

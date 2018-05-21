@@ -15,6 +15,7 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('payment_token')->nullable();
             $table->enum('status',['open','closed']);
             $table->timestamps();
         });
@@ -26,8 +27,7 @@ class CreateTransactionsTable extends Migration
      * @return void
      */
     public function down()
-    {
-        Schema::dropIfExists('orders');
+    {   
         Schema::dropIfExists('transactions');
     }
 }

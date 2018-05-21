@@ -1,8 +1,5 @@
 <?php
 
-// Route::get('/admin', function () {
-//     return view('templates/admin_');
-// });
 
 Route::get('/', 'PageController@index')->name('home');
 Route::get('/about_us','PageController@about');
@@ -16,12 +13,11 @@ Route::get('/cart/delete/{product}','CartController@delete');
 Route::post('/cart/update','CartController@update');
 Route::post('/cart/{product}', 'CartController@add');
 
-Route::get('user/create','UsersController@create');
+Route::get('user/create','UsersController@create')->name('delivery_form');;
 Route::post('user/store','UsersController@store');
-
-Route::get('order/create','OrderController@create');
-Route::post('order/store','OrderController@store');
 
 Route::get('/contacts', 'ContactsController@create');
 Route::post('/contacts', 'ContactsController@store');
 
+Route::get('order/create','OrderController@create');
+Route::post('order/store','OrderController@store')->middleware('duplicate_order');

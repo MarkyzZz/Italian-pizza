@@ -9,13 +9,14 @@
 			<h2>{{Session::all()['input']['street']}}</h2>
 			<h2>{{Session::all()['input']['city']}}</h2>
 			<h2>{{Session::all()['input']['phone']}}</h2>
+			<h2><span class="yellow-text">Payment by</span>: {{Session::all()['input']['payment_type']}}</h2>
 		</div>
 		<h1 class="text-center yellow-text">Order Summary</h1>
 		@foreach(Cart::content() as $item)
-			<h2 class="text-center">{{$item->name}}({{$item->qty}})&nbsp;&nbsp;<span>{{$item->subtotal()}}</span></h2>
+			<h2 class="text-center">{{$item->name}}({{$item->qty}})&nbsp;&nbsp;<span>{{$item->subtotal()}} MDL</span></h2>
 		@endforeach
 		<hr>
-		<h1 class="text-center"><span class="yellow-text">Total:&nbsp;&nbsp;</span>{{Cart::total()}}</h1>
+		<h1 class="text-center"><span class="yellow-text">Total:&nbsp;&nbsp;</span>{{Cart::total()}} MDL</h1>
 		<button type="submit" id="submit" class="btn btn-default center-block">Place order</button>
 	</form>
 @endsection
