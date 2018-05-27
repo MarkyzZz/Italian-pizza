@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email');
+            $table->string('password');
             $table->string('full_name');
             $table->char('phone', 12);
             $table->string('city');
@@ -24,7 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('apartment_number')->nullable();
             $table->string('doorcode')->nullable();
             $table->string('additional_info')->nullable();
-            $table->string('password');
+            $table->integer('role_id')->unsigned()->default(3);
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');            
             $table->rememberToken();
             $table->timestamps();
         });

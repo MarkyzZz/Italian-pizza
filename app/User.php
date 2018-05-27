@@ -33,4 +33,8 @@ class User extends Model
         return $this->hasMany(Order::class);
     }
     
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
