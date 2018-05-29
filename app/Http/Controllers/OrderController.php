@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Order;
 use App\Transaction;
@@ -17,8 +18,9 @@ class OrderController extends Controller
 {
     public function create()
     {
-    	if(!Session::has('input')) return redirect()->back();
-        if(Session::get('input')['payment_type'] == 'cash'){
+    	if(!Session::has('input')) return back();
+
+        if(Session::get('input.payment_type') == 'cash'){
             Session::forget('input.card_no');
             Session::forget('input.ccExpiryMonth');
             Session::forget('input.ccExpiryYear');
@@ -30,18 +32,25 @@ class OrderController extends Controller
 
     public function store()
     {
-        // Create a new user (parent)
-        $user = new User();
-        $user->email = Session::all()['input']['email'];
-        $user->full_name = Session::all()['input']['name'];
-        $user->phone = Session::all()['input']['phone'];
-        $user->city = Session::all()['input']['city'];
-        $user->street = Session::all()['input']['street'];
-        $user->block_number = Session::all()['input']['block'];
-        $user->apartment_number = Session::all()['input']['apartment'];
-        $user->doorcode = Session::all()['input']['doorcode'];
-        $user->additional_info = Session::all()['input']['info'];
-        $user->password = random_password();
+        // Create a new user or retrieve the current one
+        if (Auth::check() ) {
+            $user = Auth::user();
+        }
+        else {
+            $user = new User();
+            $user->email = Session::all()['input']['email'];
+            $user->full_name = Session::all()['input']['name'];
+            $user->phone = Session::all()['input']['phone'];
+            $user->city = Session::all()['input']['city'];
+            $user->street = Session::all()['input']['street'];
+            $user->block_number = Session::all()['input']['block'];
+            $user->apartment_number = Session::all()['input']['apartment'];
+            $user->doorcode = Session::all()['input']['doorcode'];
+            $user->additional_info = Session::all()['input']['info'];
+            $user->password = random_password();
+            $user->save();
+        }
+        
 
         // Create a new transaction
         $transaction = new Transaction();
@@ -52,7 +61,7 @@ class OrderController extends Controller
         // If payment is cash just save it to Database
         // If payment is e-cash make a request to Stripe API
         
-        if (Session::get('input')['payment_type'] == 'epayment') {
+        if (Session::get('input.payment_type') == 'epayment') {
         $stripe = Stripe::make(env('STRIPE_SECRET'));
 
             try {
@@ -74,8 +83,12 @@ class OrderController extends Controller
                     'card' => $token['id'],
                     'currency' => 'MDL',
                     'amount'   => Cart::total(),
-                    'description' => 'Add in wallet',
-                    'customer' => $user->id
+                    'description' => 'Adding to wallet for orders!',
+                    'metadata' => [
+                                    'user_name' => $user->full_name,
+                                    'user_id' => $user->id,
+                                    'phone' => $user->phone
+                                ]
                 ]);
             } catch (Exception $e) {
                 \Session::put('error',$e->getMessage());
@@ -90,7 +103,7 @@ class OrderController extends Controller
                 
         }
         if((isset($charge['status']) &&  $charge['status'] == 'succeeded') || Session::get('input.payment_type') == 'cash') {
-                $user->save();
+                
                 $transaction->payment_token = isset($charge['id'])? $charge['id'] : null;
                 $transaction->save();
                 Cart::content()->each(function($cartItem) use ($user, $transaction){

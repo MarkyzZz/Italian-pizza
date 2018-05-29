@@ -16,6 +16,7 @@ mix.options({processCssUrls: false});
 mix.sass('resources/assets/sass/style.scss','public/css')
 	.sass('resources/assets/sass/admin.scss','public/css')
 	.sass('resources/assets/sass/menu.scss','public/css')
+	.sass('resources/assets/sass/auth.scss','public/css')
 	.js('resources/assets/js/lib.js','public/js')
 	.scripts([
 		'node_modules/jquery/dist/jquery.min.js',

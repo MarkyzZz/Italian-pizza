@@ -23,18 +23,7 @@
             </button>
             <div class="navbar-brand">   
             </div>
-        </div>
-
-        <form action="" class="navbar-form navbar-left">
-            <div class="input-group">
-              <div class="input-group-btn">
-                  <button class="btn  search-btn-icon">
-                   <i class="fa fa-search" aria-hidden="true"></i>                  
-                  </button>
-               </div>
-              <input type="Search" placeholder="Search..." class="form-control-serch search-box" />   
-            </div>     
-        </form>
+        </div>  
 
         <div class="items">
           <ul class="nav navbar-right top-nav">        
@@ -47,24 +36,13 @@
 
         <div class="collapse navbar-collapse navbar-ex1-collapse" style="background-color: #616060; border:1px solid #616060;">
             <ul class="nav navbar-nav side-nav">
-              <a href="#"><img class="logostyle" src="{{asset('/img/logo.png')}}" alt="LOGO""></a>
+              <a href="/"><img class="logostyle" src="{{asset('/img/logo.png')}}" alt="LOGO"></a>
                 <li>
-                   <a class="active" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-home" aria-hidden="true"></i>   <span style="color:white;">  Home </span></a>
+                    <a class="active" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-user-o" aria-hidden="true"></i>   <span style="color:white;">  Profile </span></a>
                 </li>
+                @yield('content')
                 <li>
-                    <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-user-o" aria-hidden="true"></i>   <span style="color:white;">  Profile </span></a>
-                </li>
-                <li>
-                    <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-calendar" aria-hidden="true"></i>   <span style="color:white;"> Users </span></a>
-                </li>
-                <li>
-                    <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-envelope" aria-hidden="true"></i>  <span style="color:white;"> Products </span></a>
-                </li>
-                <li>
-                    <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-envelope" aria-hidden="true"></i>  <span style="color:white;"> Orders </span></a>
-                </li>
-                <li>
-                    <a class="#" href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-envelope" aria-hidden="true"></i>  <span style="color:white;"> Log Out </span></a>
+                    <a class="#" href="{{url('logout')}}" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-envelope" aria-hidden="true"></i>  <span style="color:white;"> Log Out </span></a>
                 </li>
             </ul>
         </div>

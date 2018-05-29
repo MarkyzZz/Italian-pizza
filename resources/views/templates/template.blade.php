@@ -55,7 +55,12 @@
     @section('logo')
         <img id='logo' alt="logo" class="center-block col-xs-6 col-sm-4 col-md-3 img-responsive" src="{{ asset('/img/logo.png') }}">
         <a href="{{ url('/cart') }}"><img id='cart' class="img-responsive" alt="cart" src="{{ asset('/img/cart.png') }}"></a>
-        <a href="{{ url('/admin') }}"><img id='profile' class="img-responsive" alt="cart" src="{{ asset('/img/profile.png') }}"></a>
+        @if(Auth::check())
+            <a href="{{ url('/profile') }}"><img id='profile' class="img-responsive" alt="cart" src="{{ asset('/img/profile.png') }}"></a>
+            <a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-5x" aria-hidden="true"></i></a>
+        @else 
+            <a href="{{ url('/auth') }}"><i class="fa fa-sign-in fa-5x" aria-hidden="true"></i></a>
+        @endif
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">

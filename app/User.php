@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class User extends Authenticatable
 {
     use Notifiable;
 
@@ -16,7 +16,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','phone', 'city', 'street', 'block', 'apartment', 'doorcode', 'info'
+        'full_name', 'email', 'password','phone', 'city', 'street', 'block_number', 'apartment_number', 'additional_info','role_id'
     ];
 
     /**
@@ -36,5 +36,20 @@ class User extends Model
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->role_id === USER_ROLE_ADMIN;
+    }
+
+    public function isOperator()
+    {
+        return $this->role_id === USER_ROLE_OPERATOR;
+    }
+
+    public function isUser()
+    {
+        return $this->role_id === USER_ROLE_USER;
     }
 }

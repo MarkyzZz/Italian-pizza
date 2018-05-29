@@ -3,6 +3,7 @@
     "/css/style.css": "/css/style.css",
     "/css/admin.css": "/css/admin.css",
     "/css/menu.css": "/css/menu.css",
+    "/css/auth.css": "/css/auth.css",
     "/js/vendor.min.js": "/js/vendor.min.js",
     "/css/vendor.min.css": "/css/vendor.min.css"
 }

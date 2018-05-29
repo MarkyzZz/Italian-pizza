@@ -3,9 +3,9 @@
 
 Route::get('/', 'PageController@index')->name('home');
 Route::get('/about_us','PageController@about');
-Route::get('/admin','PageController@admin');
 
 Route::get('/menu','MenuController@index');
+Route::get('/profile','PageController@profile')->middleware('auth');
 
 Route::get('/cart','CartController@index');
 Route::get('cart/destroy','CartController@destroy');
@@ -21,3 +21,12 @@ Route::post('/contacts', 'ContactsController@store');
 
 Route::get('order/create','OrderController@create');
 Route::post('order/store','OrderController@store')->middleware('duplicate_order');
+
+Route::get('/auth','AuthentificationController@authPage')->middleware('guest')->name('login');
+
+Route::post('/login', 'AuthentificationController@login');
+Route::get('/logout','AuthentificationController@logout');
+Route::post('/register', 'AuthentificationController@register');
+
+
+

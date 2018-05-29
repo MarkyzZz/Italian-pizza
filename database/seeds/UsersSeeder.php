@@ -23,7 +23,7 @@ class UsersSeeder extends Seeder
 	        'doorcode' => null,
 	        'additional_info' => 'Me like pizza@!',
 	        'role_id' => 3,
-	        'password' => 'a123456',
+	        'password' => bcrypt('a123456'),
 	        'created_at' => Carbon::now(),
 	        'updated_at' => Carbon::now()
         ]);
@@ -38,7 +38,7 @@ class UsersSeeder extends Seeder
 	        'doorcode' => null,
 	        'additional_info' => 'Me like pizza ananasio@!',
 	        'role_id' => 2,
-	        'password' => 'a123456',
+	        'password' => bcrypt('a123456'),
 	        'created_at' => Carbon::now(),
 	        'updated_at' => Carbon::now()
         ]);
@@ -53,7 +53,7 @@ class UsersSeeder extends Seeder
 	        'doorcode' => null,
 	        'additional_info' => 'I h8 pizza',
 	        'role_id' => 1,
-	        'password' => 'a123456',
+	        'password' => bcrypt('a123456'),
 	        'created_at' => Carbon::now(),
 	        'updated_at' => Carbon::now()
         ]);
@@ -68,7 +68,7 @@ class UsersSeeder extends Seeder
 	        'doorcode' => null,
 	        'additional_info' => 'Unde s deie la loc dupa atata frecatura intransele',
 	        'role_id' => 1,
-	        'password' => 'a123456',
+	        'password' => bcrypt('a123456'),
 	        'created_at' => Carbon::now(),
 	        'updated_at' => Carbon::now()
         ]);

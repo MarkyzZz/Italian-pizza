@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+
     public function index()
     {
     	return view('homepage');
@@ -16,8 +17,8 @@ class PageController extends Controller
     	return view('about_us');
     }
 
-    public function admin()
+    public function profile()
     {
-    	return view('templates.admin_');
+    	return view('partials.admin_content');
     }
 }
