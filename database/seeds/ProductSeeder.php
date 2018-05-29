@@ -14,7 +14,7 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             'name' => 'Al Polo',
-            'description' => str_random(10),
+            'description' => "This gud pizza!",
             'price' => 84,
             'image_path' => '/img/menu/al-pollo.png',
             'created_at' => Carbon::now(),
@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert([
             'name' => 'Al Tono',
-            'description' => str_random(10),
+            'description' => "This gud pizza too!",
             'price' => 90,
             'image_path' => '/img/menu/al tono.png',
             'created_at' => Carbon::now(),
@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert([
             'name' => 'Americana',
-            'description' => str_random(10),
+            'description' => "Me like this one!",
             'price' => 80,
             'image_path' => '/img/menu/americana.png',
             'created_at' => Carbon::now(),
@@ -41,7 +41,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert([
             'name' => 'Di Carne',
-            'description' => str_random(10),
+            'description' => "Very nice pizza!",
             'price' => 76,
             'image_path' => '/img/menu/di carne.png',
             'created_at' => Carbon::now(),
@@ -50,7 +50,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert([
             'name' => 'Italiana',
-            'description' => str_random(10),
+            'description' => "Very nice pizza!",
             'price' => 90,
             'image_path' => '/img/menu/italiana.png',
             'created_at' => Carbon::now(),
@@ -59,7 +59,7 @@ class ProductSeeder extends Seeder
 
          DB::table('products')->insert([
             'name' => 'Margherita',
-            'description' => str_random(10),
+            'description' => "Delicious and italian!",
             'price' => 77,
             'image_path' => '/img/menu/margherita.png',
             'created_at' => Carbon::now(),
@@ -68,7 +68,7 @@ class ProductSeeder extends Seeder
 
          DB::table('products')->insert([
             'name' => 'Marinara',
-            'description' => str_random(10),
+            'description' => "Delicious and italian!",
             'price' => 99,
             'image_path' => '/img/menu/marinara.png',
             'created_at' => Carbon::now(),
@@ -77,7 +77,7 @@ class ProductSeeder extends Seeder
 
          DB::table('products')->insert([
             'name' => 'Monte Verde',
-            'description' => str_random(10),
+            'description' => "Very gud pizza mate!",
             'price' => 76,
             'image_path' => '/img/menu/monte verde.png',
             'created_at' => Carbon::now(),
@@ -86,7 +86,7 @@ class ProductSeeder extends Seeder
 
          DB::table('products')->insert([
             'name' => 'Quatro Formaggi',
-            'description' => str_random(10),
+            'description' => "Very gud pizza mate!",
             'price' => 75,
             'image_path' => '/img/menu/quatro formaggi.png',
             'created_at' => Carbon::now(),
@@ -95,7 +95,7 @@ class ProductSeeder extends Seeder
 
          DB::table('products')->insert([
             'name' => 'Regina',
-            'description' => str_random(10),
+            'description' => "ME LIKE THIS IZZA!",
             'price' => 81,
             'image_path' => '/img/menu/regina.png',
             'created_at' => Carbon::now(),
@@ -104,7 +104,7 @@ class ProductSeeder extends Seeder
 
          DB::table('products')->insert([
             'name' => 'Salami',
-            'description' => str_random(10),
+            'description' => "ME LIKE THIS IZZA!",
             'price' => 89,
             'image_path' => '/img/menu/salami.png',
             'created_at' => Carbon::now(),

@@ -19,6 +19,6 @@ class PageController extends Controller
 
     public function profile()
     {
-    	return view('partials.admin_content');
+    	return view('profile.admin_profile');
     }
 }

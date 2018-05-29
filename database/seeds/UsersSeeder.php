@@ -14,7 +14,7 @@ class UsersSeeder extends Seeder
     {
         DB::table('users')->insert([
 	        'email' => 'admin@italian.pi',
-	        'full_name' => 'Johny Conta',
+	        'full_name' => 'Johny Sins',
 	        'phone' => '069849825',
 	        'city' => 'Bacioi',
 	        'street' => '31 august 1989',
@@ -22,7 +22,7 @@ class UsersSeeder extends Seeder
 	        'apartment_number' => null,
 	        'doorcode' => null,
 	        'additional_info' => 'Me like pizza@!',
-	        'role_id' => 3,
+	        'role_id' => 1,
 	        'password' => bcrypt('a123456'),
 	        'created_at' => Carbon::now(),
 	        'updated_at' => Carbon::now()
@@ -52,7 +52,7 @@ class UsersSeeder extends Seeder
 	        'apartment_number' => null,
 	        'doorcode' => null,
 	        'additional_info' => 'I h8 pizza',
-	        'role_id' => 1,
+	        'role_id' => 3,
 	        'password' => bcrypt('a123456'),
 	        'created_at' => Carbon::now(),
 	        'updated_at' => Carbon::now()

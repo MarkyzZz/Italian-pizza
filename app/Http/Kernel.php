@@ -57,5 +57,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'duplicate_order' => \App\Http\Middleware\DuplicateOrderMiddleware::class,
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'operator' => \App\Http\Middleware\OperatorMiddleware::class
     ];
 }

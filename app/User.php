@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->role_id === USER_ROLE_USER;
     }
+
+    public function toStringRole()
+    {
+        return $this->isAdmin()? 'Admin' : ($this->isOperator()? 'Operator' : 'User');
+    }
 }

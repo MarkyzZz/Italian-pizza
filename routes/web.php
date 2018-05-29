@@ -7,6 +7,22 @@ Route::get('/about_us','PageController@about');
 Route::get('/menu','MenuController@index');
 Route::get('/profile','PageController@profile')->middleware('auth');
 
+Route::get('profile/users', 'ProfileController@users');
+Route::get('profile/users/create', 'ProfileController@createUser');
+Route::post('profile/users', 'ProfileController@storeUser');
+
+
+
+Route::get('profile/products', 'ProfileController@products');
+Route::get('/profile/products/create', 'ProfileController@createProduct');
+Route::post('/profile/products', 'ProfileController@storeProduct');
+
+
+Route::get('profile/orders', 'ProfileController@orders');
+
+
+
+
 Route::get('/cart','CartController@index');
 Route::get('cart/destroy','CartController@destroy');
 Route::get('/cart/delete/{product}','CartController@delete');
