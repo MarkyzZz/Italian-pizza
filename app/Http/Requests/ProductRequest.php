@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProductRequest extends FormRequest
@@ -24,10 +25,10 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'img' => Request::hasFile('img')? 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048' : 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required',
             'description' => 'required|max:4096',
-            'price' => ['required', 'regex:/^[0-9]*.[0-9]{2}$/']
+            'price' => ['required', 'regex:/^[0-9]*(.[0-9]{2})?$/']
         ];
     }
 }

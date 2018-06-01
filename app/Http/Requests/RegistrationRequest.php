@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class RegistrationRequest extends FormRequest
 {
@@ -25,7 +26,7 @@ class RegistrationRequest extends FormRequest
     {
         return [
             'email' =>    'required|email',
-            'password' => 'required|min:6|confirmed',
+            'password' => strpos(Request::path(), 'edit')?  (empty(Request::get('password'))? '' : 'min:6|confirmed') : 'required|min:6|confirmed',
             'full_name' => 'required',
             'phone' => 'digits_between:9,11',
             'city' => 'required',

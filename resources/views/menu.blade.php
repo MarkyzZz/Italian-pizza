@@ -6,7 +6,7 @@
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="col-md-3">
             <div class="thumbnail">
-              <img src="{{$product->image_path}}" alt="al_pollo">
+              <img src="{{$product->image_path}}" alt="{{$product->name}}">
               <div class="caption">
                 <p class="yellow-text">{{$product->name}}</p>
                 <p class="price col-md-4">{{$product->price}} <span class="small">MDL</span></p>

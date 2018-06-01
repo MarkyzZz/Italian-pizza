@@ -6,7 +6,7 @@
 	{{csrf_field()}}
 	@foreach($cart as $item)
 	<div class="row orders">
-		<img src="{{$item->options->image}}" alt="{{$item->name}}">
+		<img width="240" height="240" src="{{$item->options->image}}" alt="{{$item->name}}">
 		<div class="header">
 			<h1 class="yellow-text col-md-offset-1">{{$item->name}}</h1>
 			<h2 class="yellow-text col-md-offset-6">Total:</h2>

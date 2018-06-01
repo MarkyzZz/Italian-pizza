@@ -7,7 +7,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/admin.css')}}">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
