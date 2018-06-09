@@ -1,4 +1,7 @@
 @extends('templates.template')
+@section('styles')
+  <link rel="stylesheet" type="text/css" href="{{asset('css/cart.css')}}">
+@endsection
 @section('content')
 @include('partials.subnav')
 	<form action="/order/store" method="POST">

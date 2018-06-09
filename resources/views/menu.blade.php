@@ -1,10 +1,13 @@
 @extends('templates.template')
+@section('styles')
+  <link rel="stylesheet" type="text/css" href="{{asset('css/menu.css')}}">
+@endsection
 @section('content')
 	<div class="row">
       @foreach($products as $product)
         <form method="POST" action="/cart/{{$product->id}}">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="thumbnail">
               <img src="{{$product->image_path}}" alt="{{$product->name}}">
               <div class="caption">

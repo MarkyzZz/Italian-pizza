@@ -1,4 +1,7 @@
 @extends('templates.template')
+@section('styles')
+	<link rel="stylesheet" type="text/css" href="{{asset('css/home.css')}}">
+@endsection
 @section('content')
 @include('partials.carousel')
 <div class="ingridients-container">

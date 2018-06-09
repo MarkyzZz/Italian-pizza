@@ -28,16 +28,20 @@
 	</div>
 
 	<div class="form-group">
+		<label for="name">Product Name:</label>
 		<input type="text" name="name" id="name" class="input-lg form-control" placeholder="Product Name" value="@if(!empty($product)) {{$product->name}} @endif">
 	</div>
 	<div class="form-group">
+		<label for="description">Product Description:</label>
 		<textarea type="text" name="description" id="description" class="input-lg form-control" placeholder="Product Description">@if(!empty($product)) {{$product->description}} @endif</textarea>
 	</div>
 	<div class="form-group">
+		<label for="price">Product Price(MDL):</label>
 		<input type="text" name="price" id="price" class="input-lg form-control" placeholder="Product Price In MDL" value="@if(!empty($product)) {{$product->price}} @endif">
 	</div>
 	<div class="form-group">
-		<input type="file" name="img" class="input-lg form-control">
+		<label for="img">Product Image: </label>
+		<input type="file" name="img" id="img" class="input-lg form-control">
 	</div>
 
 	<div class="form-group">

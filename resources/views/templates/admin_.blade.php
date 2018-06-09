@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/font-awesome.min.css')}}">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Authentic Italian Pizza" />
+    <meta name="author" content="Marin Cunup" />
+    <meta name="_token" content="{{csrf_token()}}" />
+    <link rel="shortcut icon" href={{ asset("favicon.png") }} />
+    <title>Italian Pizza</title>
+    <link href="{{ asset('/css/vendor.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/admin.css')}}">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="{{ asset('/js/vendor.min.js') }}"></script>
 </head>
 <body>
     <body>

@@ -1,5 +1,7 @@
 @extends('templates.template')
-
+@section('styles')
+<link rel="stylesheet" type="text/css" href="{{asset('css/cart.css')}}">
+@endsection
 @section('content')
 @include('partials.subnav')
 <form class="center-block col-md-8">
@@ -47,7 +49,7 @@
         $('input[name="payment_type"]:checked').val() == 'epayment' && 
          $('.epayment').show() || $('.epayment').hide();
     });
-    $('#email,#name,#phone,#city,#street,#block,#apartment,#doorcode,#info,.radio').on('focus',function(){
+    $('#email,#name,#phone,#city,#street,#block,#apartment,#doorcode,#info,.radio,#card_no,#ccExpiryMonth,#ccExpiryYear,#cardCVV,#card_owner').on('focus',function(){
         if ($(this).hasClass('radio')) $('.radio').removeClass('error').next().remove() && $('#submit').prev('p').remove();
         $(this).removeClass('error').next().remove();
     });

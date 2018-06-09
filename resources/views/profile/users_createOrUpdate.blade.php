@@ -26,40 +26,52 @@
 		</div>
 	</div>
 	<div class="form-group">
+		<label for="full_name">Full Name:</label>
 		<input type="text" name="full_name" id="full_name" class="input-lg form-control" placeholder="Full Name" value="@if(!empty($user)) {{trim($user->full_name)}}  @endif">
 	</div>
 	<div class="form-group">
+		<label for="email">Email:</label>
 		<input type="email" name="email" id="email" class="input-lg form-control" placeholder="Email Address" value="@if(!empty($user)) {{$user->email}}  @endif">
 	</div>
 	<div class="form-group">
+		<label for="password">Password:</label>
 		<input type="password" name="password" id="password" class="input-lg form-control" placeholder="Password" value="">
 	</div>
 	<div class="form-group">
+		<label for="confirm-password">Password Confirmation:</label>
 		<input type="password" name="password_confirmation" id="confirm-password" class="input-lg form-control" placeholder="Confirm Password" value="">
 	</div>
 	<div class="form-group">
+		<label for="phone">Phone:</label>
 		<input type="text" name="phone" id="phone" class="input-lg form-control" placeholder="Phone" value="@if(!empty($user)) {{$user->phone}}  @endif">
 	</div>
 	<div class="form-group">
+		<label for="city">City:</label>
 		<input type="text" name="city" id="city" class="input-lg form-control" placeholder="City" value="@if(!empty($user)) {{$user->city}}  @endif">
 	</div>
 	<div class="form-group">
+		<label for="street">Street:</label>
 		<input type="text" name="street" id="street" class="input-lg form-control" placeholder="Street" value="@if(!empty($user)) {{$user->street}}  @endif">
 	</div>
 	<div class="form-group">
+		<label for="block_no">Block Number:</label>
 		<input type="text" name="block_no" id="block_no" class="input-lg form-control" placeholder="Block/House №" value="@if(!empty($user)) {{$user->block_number}}  @endif">
 	</div>	
 	<div class="form-group">
+		<label for="apartment_no">Apartment:</label>
 		<input type="text" name="apartment_no" id="apartment_no" class="form-control input-lg " placeholder="Apartment Number/House №" value="@if(!empty($user->apartment_number)) {{$user->apartment_number}}  @endif">
 	</div>	
 	<div class="form-group">
+		<label for="door_code">Door Code:</label>
 		<input type="text" name="door_code" id="door_code" class="input-lg form-control" placeholder="Door Code" value="@if(!empty($user)) {{$user->doorcode}}  @endif">
 	</div>
 	<div class="form-group">
+		<label for="additional_info">Additional information:</label>
 		<textarea name="additional_info" id="additional_info" class="input-lg form-control input-lg" placeholder="Additional Information">@if(!empty($user)) {{$user->additional_info}}  @endif</textarea>
 	</div>
 
 	<div class="form-group">
+		<label for="role">User Role:</label>
 		<select name="role" id="role" class="form-control input-lg">
 			<option value="3" @if(!empty($user) && $user->isUser()) selected="selected" @endif>User</option>
 			<option value="2" @if(!empty($user) && $user->isOperator()) selected="selected"  @endif>Operator</option>

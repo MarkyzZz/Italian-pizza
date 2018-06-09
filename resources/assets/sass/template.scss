@@ -1,0 +1,103 @@
+@import 'variables';
+@import 'classes';
+@font-face {
+    font-family: Justtellmewhat;
+    src: url("../fonts/Justtellmewhat.eot") format("eot"),
+		 url("../fonts/Justtellmewhat.woff2") format("woff2"),
+		 url("../fonts/Justtellmewhat.woff") format("woff"),
+		 url("../fonts/Justtellmewhat.ttf") format("truetype"),
+		 url("../fonts/Justtellmewhat.svg") format("svg");
+	font-weight: 900;
+}
+body {
+	background-image: url('../img/background.png');
+	font-family: Justtellmewhat;
+	color: white;
+	font-size: 16px;
+	font-style: italic;
+	background-size: contain;
+}
+a:hover, a:visited, a:focus{
+	text-decoration: none;
+}
+
+#profile{
+	position: relative;
+    left: 88%;
+    bottom: 12em;
+}
+
+#logo {
+	display: block;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+.center-block {
+	float: none;
+}
+#cart, #auth {
+	float: right;
+    position: relative;
+    bottom: 12em;
+    right: 8.1em;
+}
+#auth {
+    right: 0.1em;
+}
+
+#logout {
+    position: relative;
+    left: 94%;
+    bottom: 15.2em;
+}
+
+.navbar, .navbar-default {
+	background-color: transparent;
+	border-width: 0px;
+}
+.item-text {
+	font-size: 36px;
+	color: white;
+}
+.nav-item {
+	padding: 0 2.185em;
+}
+.navbar-collapse {
+	margin: 35px 0 0 2.1875em;
+}
+
+.yellow-text {
+	color: $yellow-color;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+.navbar-brand{
+	display:none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+    margin: 35px 0 0 2.185em;
+}
+
+footer{
+	background-image: url('../img/background.png');
+	height:262px;
+	filter: invert(100%);
+	margin-top: 90px;
+	background-size: inherit;
+}
+footer > img {
+	filter: inherit;
+	padding-top: 40px; 
+}
+footer > p {
+	text-align: center;
+	padding-top: 20px;
+    font-size: 16px;
+    font-weight: 100;
+}

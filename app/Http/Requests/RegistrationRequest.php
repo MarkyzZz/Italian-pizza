@@ -32,7 +32,6 @@ class RegistrationRequest extends FormRequest
             'city' => 'required',
             'street' => 'required',
             'block_no' => 'required',
-            'apartment_no' => 'required'
         ];
     }
 }

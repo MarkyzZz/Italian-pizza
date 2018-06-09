@@ -1,0 +1,44 @@
+@import 'variables';
+
+.form-group > input,.form-group > input:active,
+.form-group > input:focus, 
+.form-group > textarea,
+.form-group > textarea:focus {
+    background-color: transparent;
+    border-radius: 0;
+    border-width: 2px;
+    border-color: white;
+    color: white;
+    outline: 0;
+    appearance: none;
+}
+.email{
+	position: relative;
+	left: 15px;
+}
+#message {
+	max-width: 568px;
+    width: 556px;
+    max-height: 250px;
+    height: 126px;
+}
+.form-group > label,form > div:nth-child(1) > div:nth-child(5) > label{
+	text-align: left;
+}
+.form-group {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.border-wrapper{
+	position: absolute;
+	transform: translate(40em,-2em);
+	border-style: solid;
+	border-width: 42px 40px 40px 43px;
+	-moz-border-image: url('../i40mg/wood-frame.png') 42 40 40 43 round;
+	-webkit-border-image: url('../img/wood-frame.png') 42 40 40 43 round;
+	-o-border-image: url('../img/wood-frame.png') 42 40 40 43 round;
+	border-image: url('../img/wood-frame.png') 42 40 40 43 round;
+}
+iframe{
+	filter: grayscale(100%);
+}
