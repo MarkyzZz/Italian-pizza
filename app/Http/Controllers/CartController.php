@@ -35,7 +35,10 @@ class CartController extends Controller
     		'price' => $product->price
     	]);
     	$cart = Cart::content();
-    	return redirect()->back();
+    	// return back();
+        return response()->json([   'success' => "Product has been added to your cart!",
+                                    'cart_counter' => Cart::count()
+                                ]);
     }
     /**
      * Updates current cart with new values
