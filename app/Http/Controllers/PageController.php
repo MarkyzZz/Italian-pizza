@@ -9,7 +9,7 @@ class PageController extends Controller
 
     public function index()
     {
-    	return view('homepage');
+    	return view('homepage')->with(['success'=> 'You have successfully logged in!']);
     }
 
     public function about()

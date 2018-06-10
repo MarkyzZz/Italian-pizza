@@ -14,11 +14,8 @@ mix.options({processCssUrls: false});
  */
 
 mix
-// .sass('resources/assets/sass/style.scss','public/css')
-// 	.sass('resources/assets/sass/admin.scss','public/css')
-// 	.sass('resources/assets/sass/menu.scss','public/css')
-// 	.sass('resources/assets/sass/auth.scss','public/css')
 .sass('resources/assets/sass/template.scss','public/css')
+.sass('resources/assets/sass/auth.scss','public/css')
 .sass('resources/assets/sass/home.scss','public/css')
 .sass('resources/assets/sass/contacts.scss','public/css')
 .sass('resources/assets/sass/menu.scss','public/css')

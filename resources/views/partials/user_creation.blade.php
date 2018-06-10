@@ -1,36 +1,36 @@
 <div class="form-group">
 	<br>
-    <input placeholder="Email" type="email" class="form-control input-lg" id="email" name="email" value="@if(Session::has('input.email')) {{Session::get('input.email')}}  @endif">
+    <input placeholder="Email" type="email" class="form-control input-lg" id="email" name="email" value="{{ old('email') }}">
   </div>
   <div class="form-group">
 	<br>
-    <input placeholder="Name Surname" type="text" class="form-control input-lg" id="name" name="name" value="@if(Session::has('input.name')) {{Session::get('input.name')}}  @endif">
+    <input placeholder="Name Surname" type="text" class="form-control input-lg" id="name" name="full_name" value="{{ old('full_name') }}">
   </div>
   <div class="form-group">
 	<br>
-    <input placeholder="Phone" type="number" class="form-control input-lg" id="phone" name="phone" value="@if(Session::has('input.phone')) {{Session::get('input.phone')}}  @endif">
+    <input placeholder="Phone" type="number" class="form-control input-lg" id="phone" name="phone" value="{{ old('phone') }}">
   </div>
   <div class="form-group">
 	<br>
-    <input placeholder="City" type="text" class="form-control input-lg" id="city" name="city" value="@if(Session::has('input.city')) {{Session::get('input.city')}}  @endif">
+    <input placeholder="City" type="text" class="form-control input-lg" id="city" name="city" value="{{ old('city') }}">
     <br>
   </div>
   	<div class="form-group">
-  	  <input placeholder="Street" type="text" class="form-control input-lg" id="street" name="street" value="@if(Session::has('input.street')) {{Session::get('input.street')}}  @endif">
+  	  <input placeholder="Street" type="text" class="form-control input-lg" id="street" name="street" value="{{ old('street') }}">
       <br>
   	</div>
     <div class="form-group row">
       <div class="col-xs-5">
-        <input placeholder="Block Number/House Number" type="text" class="form-control input-lg" id="block" name="block" value="@if(Session::has('input.block')) {{Session::get('input.block')}}  @endif">
+        <input placeholder="Block Number/House Number" type="text" class="form-control input-lg" id="block" name="block_no" value="{{ old('block_no') }}">
       </div>
       <div class="col-xs-4">
-        <input placeholder="Apartment number" type="text" class="form-control input-lg" id="apartment" name="apartment" value="@if(Session::has('input.apartment')) {{Session::get('input.apartment')}}  @endif">
+        <input placeholder="Apartment number" type="text" class="form-control input-lg" id="apartment" name="apartment" value="{{ old('apartment') }}">
       </div>
       <div class="col-xs-3">
-        <input placeholder="Door code" type="text" class="form-control input-lg" id="doorcode" name="doorcode" value="@if(Session::has('input.doorcode')) {{Session::get('input.doorcode')}}  @endif">
+        <input placeholder="Door code" type="text" class="form-control input-lg" id="doorcode" name="doorcode" value="{{ old('doorcode') }}">
       </div>
     </div>  
   <div class="form-group">
 	<br>
-    <textarea placeholder="Additional information" class="form-control input-lg" id="info" name="info" value="@if(Session::has('input.info')) {{Session::get('input.info')}}  @endif"></textarea>
+    <textarea placeholder="Additional information" class="form-control input-lg" id="info" name="info" value="{{ old('info') }}"></textarea>
   </div>

@@ -54,6 +54,16 @@
   </script>
 </head>
 <body>
+
+@if(Session::has('success'))
+<div class="form-group text-center col-md-12 center-block" style="position:fixed; z-index: 99">
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong><i style="padding-right: 30px;" class="fa fa-times-circle-o" aria-hidden="true"></i>Success!</strong>
+                {{Session::get('success')}}
+              </div>
+    </div>
+@endif
     <div class="container relative">
     @section('logo')
         <img id='logo' alt="logo" class="center-block col-xs-6 col-sm-4 col-md-3 img-responsive" src="{{ asset('/img/logo.png') }}">

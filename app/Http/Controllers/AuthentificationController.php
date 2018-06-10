@@ -19,7 +19,7 @@ class AuthentificationController extends Controller
     public function login(LoginRequest $request)
     {
     	if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
-            return redirect()->intended()->with(['success' => "You have successfully logged in!"]);
+            return redirect()->intended()->with(['success' => 'You have successfully logged in!']);
         }
         return redirect()->back()->withErrors('The provided credentials do not match our records. Try again!');
     }
@@ -28,7 +28,7 @@ class AuthentificationController extends Controller
     {
         if (Auth::user()) Auth::logout();
 
-    	return redirect()->route('home');
+    	return redirect()->route('home')->with(['success' => 'You have successfully logged out!']);
     }
 
     public function register(RegistrationRequest $request)

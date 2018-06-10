@@ -32,8 +32,8 @@
             <div class="items">
               <ul class="nav navbar-right top-nav">        
                 <li class="editpro">
-                  <i class="fasett fa-cog" aria-hidden="true" class="menu-button" id="menu-button"></i> 
-                  <h5 class="pull-left login-person-head">Welcome, {{Auth::user()->full_name}}</h5> 
+                  
+                  <h5 class="pull-left login-person-head" style="margin-right:60px;">Welcome, {{Auth::user()->full_name}}</h5> 
               </li>
           </ul>
       </div>
@@ -46,22 +46,22 @@
         </li>
         @if(Auth::user()->isAdmin())
         <li>
-            <a class="" href="/profile/users" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-calendar" aria-hidden="true"></i>   <span style="color:white;"> Users </span></a>
+            <a class="" href="/profile/users" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-users" aria-hidden="true"></i>   <span style="color:white;"> Users </span></a>
         </li>
         <li>
             <a class="#" href="/profile/products" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-envelope" aria-hidden="true"></i>  <span style="color:white;"> Products </span></a>
         </li>
         <li>
-            <a class="#" href="/profile/orders" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-envelope" aria-hidden="true"></i>  <span style="color:white;"> Orders </span></a>
+            <a class="#" href="/profile/orders" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-first-order" aria-hidden="true"></i>  <span style="color:white;"> Orders </span></a>
         </li>
 
         @elseif(Auth::user()->isOperator())
         <li>
-            <a class="#" href="/profile/orders" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-envelope" aria-hidden="true"></i>  <span style="color:white;"> Orders </span></a>
+            <a class="#" href="/profile/orders" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-first-order" aria-hidden="true"></i>  <span style="color:white;"> Orders </span></a>
         </li>
         @endif
         <li>
-            <a class="#" href="{{url('logout')}}" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-envelope" aria-hidden="true"></i>  <span style="color:white;"> Log Out </span></a>
+            <a class="#" href="{{url('logout')}}" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-sign-out" aria-hidden="true"></i>  <span style="color:white;"> Log Out </span></a>
         </li>
     </ul>
 </div>
