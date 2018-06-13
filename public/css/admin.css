@@ -84,7 +84,7 @@ body {
 }
 
 a {
-  color: white !important;
+  color: black;
   text-decoration: none;
 }
 
@@ -165,4 +165,25 @@ a:hover {
   .dashhead h1 {
     margin-top: 180px;
   }
+}
+
+h1 {
+  font-size: 42px;
+}
+
+tr > td {
+  padding-left: 18px;
+  padding-bottom: 15px;
+  font-size: 21px;
+}
+
+.create-button {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

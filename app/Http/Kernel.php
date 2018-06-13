@@ -11,6 +11,8 @@ class Kernel extends HttpKernel
      *
      * These middleware are run during every request to your application.
      *
+     * \Illuminate\Session\Middleware\StartSession::class,- ----------
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class - -- have been added
      * @var array
      */
     protected $middleware = [
@@ -18,11 +20,15 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        // \Illuminate\Session\Middleware\StartSession::class,
+        // \Illuminate\View\Middleware\ShareErrorsFromSession::class,
     ];
 
     /**
      * The application's route middleware groups.
-     *
+     * \Illuminate\Session\Middleware\StartSession::class - was not commented
+     * \Illuminate\View\Middleware\ShareErrorsFromSession::class - was not commented
+     * \Illuminate\Session\Middleware\AuthenticateSession::class - was commented
      * @var array
      */
     protected $middlewareGroups = [
@@ -56,5 +62,8 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'duplicate_order' => \App\Http\Middleware\DuplicateOrderMiddleware::class,
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'operator' => \App\Http\Middleware\OperatorMiddleware::class
     ];
 }

@@ -10,6 +10,9 @@
     <link rel="shortcut icon" href={{ asset("favicon.png") }} />
     <title>Italian Pizza</title>
     <link href="{{ asset('/css/vendor.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/template.css')}}">
+    @yield('styles')
+    @yield('scripts')
     <script src="{{ asset('/js/vendor.min.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
     <script>
@@ -51,11 +54,26 @@
   </script>
 </head>
 <body>
+
+@if(Session::has('success'))
+<div class="form-group text-center col-md-12 center-block" style="position:fixed; z-index: 99">
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong><i style="padding-right: 30px;" class="fa fa-times-circle-o" aria-hidden="true"></i>Success!</strong>
+                {{Session::get('success')}}
+              </div>
+    </div>
+@endif
     <div class="container relative">
     @section('logo')
         <img id='logo' alt="logo" class="center-block col-xs-6 col-sm-4 col-md-3 img-responsive" src="{{ asset('/img/logo.png') }}">
-        <a href="{{ url('/cart') }}"><img id='cart' class="img-responsive" alt="cart" src="{{ asset('/img/cart.png') }}"></a>
-        <a href="{{ url('/admin') }}"><img id='profile' class="img-responsive" alt="cart" src="{{ asset('/img/profile.png') }}"></a>
+        <a href="{{ url('/cart') }}"><img id='cart' class="img-responsive" alt="cart" src="{{ asset('/img/cart.png') }}"><span class="badge">{{Cart::count()}}</span></a>
+        @if(Auth::check())
+            <a href="{{ url('/profile') }}"><img id='profile' class="img-responsive" alt="profile" src="{{ asset('/img/profile.png') }}"></a>
+            <a href="{{ url('/logout') }}"><img id="logout" src="{{asset('/img/logout.png')}}"></a>
+        @else 
+             <a href="{{ url('/auth') }}"><img id='auth' class="img-responsive" id="login" alt="auth" src="{{ asset('/img/login.png') }}"></a>
+        @endif
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -64,7 +82,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>                        
                 </button>
-                <a class="navbar-brand" href="#">Italian Pizza</a>
             </div>
             <div class="collapse navbar-collapse" id="nav_collapsed">
               <ul class="nav navbar-nav">

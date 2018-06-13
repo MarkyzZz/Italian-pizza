@@ -1,0 +1,66 @@
+.big{
+	font-size: $fontSize;
+}
+.small{
+	font-size: $smallFontSize;
+}
+.medium {
+	font-size: $mediumFontSize;
+}
+
+.yellow-text {
+	color: $yellow-color;
+}
+
+span.yellow-text:hover {
+	color: white;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.error {
+	box-shadow: 0px 1px 11px 4px $yellow-color;
+}
+.success{
+	color: lightgreen;
+}
+
+.active {
+	color: $yellow-color;
+}
+
+.btn-default, .btn-default:focus {
+	background-color: transparent;
+	border-color: $yellow-color;
+	border-width: 6px;
+	border-radius: 0;
+	color: $yellow-color;
+	font-size: $mediumFontSize;
+	outline: 0;
+	padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0;
+    padding-bottom: 0;
+	margin-top: 30px;
+}
+ .btn-default:hover,.btn-default:active:focus {
+	border-color: white;
+	background-color: transparent;
+	color: white;
+}
+
+.icon-medium{
+	font-size: 48px;
+}
+
+.amount {
+	font-size: 48px;
+    padding-left: 6px;
+    padding-right: 12px;
+}
+
+.fa-minus-square-o:hover, .fa-plus-square-o:hover {
+	color:white;
+}

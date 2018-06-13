@@ -1,8 +1,12 @@
 {
-    "/js/lib.js": "/js/lib.js",
-    "/css/style.css": "/css/style.css",
-    "/css/admin.css": "/css/admin.css",
+    "/css/template.css": "/css/template.css",
+    "/css/auth.css": "/css/auth.css",
+    "/css/home.css": "/css/home.css",
+    "/css/contacts.css": "/css/contacts.css",
     "/css/menu.css": "/css/menu.css",
+    "/css/cart.css": "/css/cart.css",
+    "/css/admin.css": "/css/admin.css",
+    "/css/font-awesome.min.css": "/css/font-awesome.min.css",
     "/js/vendor.min.js": "/js/vendor.min.js",
     "/css/vendor.min.css": "/css/vendor.min.css"
 }

@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\UsersRequest;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use App\User;
+use Cart;
 
 class UsersController extends Controller
 {
     public function create()
     {
-    	return view('delivery_form');
+    	return (Cart::count())? view('delivery_form') : back();
     }
 
     public function store(UsersRequest $request)
@@ -19,23 +22,31 @@ class UsersController extends Controller
     	if(isset($request->validator) && $request->validator->fails()){
             return response()->json(['errors' => $request->validator->messages()]);
         }
-        $user = new User();
-        $user->email = Input::get('email');
-        $user->full_name = Input::get('name');
-        $user->phone = Input::get('phone');
-        $user->city = Input::get('city');
-        $user->street = Input::get('street');
-        $user->block_number = Input::get('block');
-        $user->apartment_number = Input::get('apartment');
-        $user->doorcode = Input::get('doorcode');
-        $user->additional_info = Input::get('info');
-        // To-do 
-        // Implement to generate a random password and send it via email
-        $gen_password = substr(str_shuffle(strtolower(sha1(rand() . time() . "my salt string"))),0, 6);
-        $user->password = bcrypt($gen_password);
-        $user->save();
-
-        return response()->json(['success' => "Your user has been created!"]);
+            if(!Auth::check()){
+                Session::put('input', [
+                    'email' => Input::get('email'),
+                    'name' => Input::get('name'),
+                    'phone' => Input::get('phone'),
+                    'city' => Input::get('city'),
+                    'street' => Input::get('street'),
+                    'block' => Input::get('block'),
+                    'apartment' => Input::get('apartment'),
+                    'doorcode' => Input::get('doorcode'),
+                    'info' => Input::get('info'),
+                ]);
+            }
+            Session::put([
+                'input.payment_type' => Input::get('payment_type'),
+                'input.card_no' => Input::get('card_no'),
+                'input.ccExpiryMonth' => Input::get('ccExpiryMonth'),
+                'input.ccExpiryYear' => Input::get('ccExpiryYear'),
+                'input.cvvNumber' => Input::get('cardCVV'),
+                'input.card_owner' => Input::get('card_owner')
+            ]);
+            return response()->json([
+                'success' => "Your user has been created!",
+                'request' => Session::get('input')    
+            ]);
 
     }
 }

@@ -75,7 +75,7 @@
                         });
                         if('success' in data && data.success.length > 0) {
                           $('#name,#email,#message').val('');
-                          $('#submit').after("<p class='yellow-text fadeOut'>" + data.success + "</p>");
+                          $('#submit').after("<p class='yellow-text text-centered medium fadeOut'>" + data.success + "</p>");
                           $('.fadeOut').delay(5000).fadeOut(1600, "linear");
                         }
                     } 

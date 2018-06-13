@@ -1,4 +1,7 @@
 @extends('templates.template')
+@section('styles')
+<link rel="stylesheet" type="text/css" href="{{asset('css/cart.css')}}">
+@endsection
 @section('content')
 @include('partials.subnav')
 @if(count($cart))
@@ -6,7 +9,7 @@
 	{{csrf_field()}}
 	@foreach($cart as $item)
 	<div class="row orders">
-		<img src="{{$item->options->image}}" alt="{{$item->name}}">
+		<img width="240" height="240" src="{{$item->options->image}}" alt="{{$item->name}}">
 		<div class="header">
 			<h1 class="yellow-text col-md-offset-1">{{$item->name}}</h1>
 			<h2 class="yellow-text col-md-offset-6">Total:</h2>
@@ -26,7 +29,7 @@
 	<div class="row">
 			<h2 id="total" class="yellow-text pull-left col-md-offset-9">Total: {{Cart::total()}} MDL
 			</h2>
-			<a class="pull-right" href="/cart/destroy"><i class="fa fa-times-circle-o icon-medium" aria-hidden="true"></i></a>
+			<a class="pull-right" data-toggle="popover" data-content="Clear Cart!" data-placement="top" href="/cart/destroy"><i class="fa fa-times-circle-o icon-medium" aria-hidden="true"></i></a>
 	</div>
 	<div class="row">
 	      <button id="submit" type="submit" class="center-block btn btn-default">submit</button>
@@ -37,6 +40,14 @@
 @endif
   <script>
     $(document).ready(function(){
+      $('[data-toggle="popover"]').on({
+      		mouseenter: function(){
+				$(this).popover('show');
+      		},
+      		mouseleave: function(){
+				$(this).popover('hide');
+      		}
+		});
       $('i.fa-plus-square-o').on('click', function(){
         var amount = $(this).prev('.amount').text();
         if(amount < 100)
